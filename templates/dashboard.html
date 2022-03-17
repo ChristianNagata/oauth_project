@@ -1,0 +1,17 @@
+{% load socialaccount %}
+
+<html>
+    <body>
+
+        <h1>Welcome, {{ user.username }}, to your dashboard page!</h1>
+        <p><a href="{% url 'my_articles' %}">My articles</a></p>
+        <h2>Write an article</h2>
+
+        <form action="{% url 'dashboard' %}" method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Post</button>
+        </form>
+
+    </body>
+</html>
