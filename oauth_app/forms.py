@@ -7,5 +7,7 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ['title', 'text']
-        labels = {'title': 'Enter your title', 
-                    'text': 'Enter your text'}
+        labels = {
+            'title': 'Enter your title',
+            'text': 'Enter your text'
+        }

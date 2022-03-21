@@ -22,7 +22,7 @@ def dashboard(request):
             return redirect('dashboard')
 
     context = {'form': form, 'articles': articles}
-    
+
     return render(request, 'dashboard.html', context)
 
 

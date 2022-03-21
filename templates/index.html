@@ -1,16 +1,18 @@
 {% load socialaccount %}
 
 <html>
-    <body>
 
-        <h1>My Google OAuth Project </h1>
-        {% if user.is_authenticated %}
-            <p>Welcome, You are logged in as {{ user.username }}</p>
-            <p>Id: {{ user.id }}</p>
-            <p><a href="{% url 'dashboard' %}">Access my dashboard</a></p>
-        {% else %}
-            <a href="{% provider_login_url 'google' %}">Login With Google</a>
-        {% endif %}
+<body>
 
-    </body>
+    <h1>My Google OAuth Project </h1>
+    {% if user.is_authenticated %}
+    <p>Welcome, You are logged in as {{ user.username }}</p>
+    <p>Id: {{ user.id }}</p>
+    <p><a href="{% url 'dashboard' %}">Access my dashboard</a></p>
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
+    {% endif %}
+
+</body>
+
 </html>

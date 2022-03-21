@@ -1,17 +1,19 @@
 {% load socialaccount %}
 
 <html>
-    <body>
 
-        <h1>My articles</h1>
-        {% if articles %}
-            {% for article in articles %}
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.text }}</p>
-            {% endfor %}
-        {% else %}
-            <p>you haven't written any article yet.</p>
-        {% endif %}
+<body>
 
-    </body>
+    <h1>My articles</h1>
+    {% if articles %}
+    {% for article in articles %}
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.text }}</p>
+    {% endfor %}
+    {% else %}
+    <p>you haven't written any article yet.</p>
+    {% endif %}
+
+</body>
+
 </html>
