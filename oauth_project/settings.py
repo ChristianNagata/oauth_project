@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # AUTHENTICATORS
     'allauth.socialaccount.providers.google',
+    # EMAIL VERIFICATION
+    'verify_email.apps.VerifyEmailConfig',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +159,17 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'christian_nagata@hotmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
