@@ -11,5 +11,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view(), name='logout'),
     path('verification/', include('verify_email.urls')),
-    path('', include('oauth_app.urls')),
+    path('conta/', include('user.urls')),
 ]
